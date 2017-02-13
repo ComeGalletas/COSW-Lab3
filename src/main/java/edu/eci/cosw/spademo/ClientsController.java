@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  * Created by 2091412 on 2/13/17.
  */
 @RestController
-@RequestMapping("/app/clients")
+@RequestMapping("/clients")
 public class ClientsController {
 
     private ClientServicesStub clients = new ClientServicesStub();

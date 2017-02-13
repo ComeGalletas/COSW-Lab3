@@ -10,7 +10,6 @@ angular.module('login.login', [ 'ngRoute' ])
 }])
 .controller('LogInController', function($rootScope, $scope, $http, $location) {
 
-  $scope.user = "user";
   var authenticate = function (credentials, callback) {
       var headers = credentials ? {authorization: "Basic " + btoa(credentials.username + ":" + credentials.password)} : {};
 

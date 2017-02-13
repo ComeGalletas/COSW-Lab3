@@ -21,4 +21,12 @@ angular.module('services.listFactory', ['ngRoute', 'ngResource'])
                 method: 'POST'
             }
         );
-    });
+    }).factory('Clients', function($resource){
+        return $resource('/clients',{},{
+              get: {
+                  method: 'GET',
+                  isArray: true
+              }
+            }
+        );
+     });
