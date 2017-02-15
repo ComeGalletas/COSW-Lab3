@@ -1,12 +1,14 @@
 package edu.eci.cosw.spademo;
 
 import edu2.eci.cosw.stubs.fakeclientslibrary.ClientServicesStub;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +29,7 @@ public class ClientsController {
             a = new ResponseEntity<>(clients.getAllClients(), HttpStatus.ACCEPTED);
         } catch (Exception ex) {
             Logger.getLogger(ClientsController.class.getName()).log(Level.SEVERE, null, ex);
-            a = new ResponseEntity<>("Error bla bla bla",HttpStatus.NOT_FOUND);
+            a = new ResponseEntity<>("Error bla bla bla", HttpStatus.NOT_FOUND);
         }
         return a;
     }
@@ -39,7 +41,7 @@ public class ClientsController {
             a = new ResponseEntity<>(clients.getClientById(id), HttpStatus.ACCEPTED);
         } catch (Exception ex) {
             Logger.getLogger(ClientsController.class.getName()).log(Level.SEVERE, null, ex);
-            a = new ResponseEntity<>("Error bla bla bla",HttpStatus.NOT_FOUND);
+            a = new ResponseEntity<>("Error bla bla bla", HttpStatus.NOT_FOUND);
         }
         return a;
     }
